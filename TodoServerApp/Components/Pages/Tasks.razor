@@ -1,0 +1,14 @@
+﻿@page "/"
+
+<PageTitle>Задачи</PageTitle>
+
+<h1>Мои задачи</h1>
+
+@foreach(var task in tasks)
+{
+    <p>@task</p>
+}
+
+@code {
+    string[] tasks = ["Задача 1", "Задача 2"];
+}
