@@ -12,8 +12,8 @@ using TodoServerApp.Data;
 namespace TodoServerApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240810052818_add_taskitem")]
-    partial class add_taskitem
+    [Migration("20240915042519_AddRest")]
+    partial class AddRest
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -235,12 +235,14 @@ namespace TodoServerApp.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("FinishDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -251,28 +253,28 @@ namespace TodoServerApp.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 8, 10, 10, 28, 18, 120, DateTimeKind.Local).AddTicks(5782),
+                            CreatedDate = new DateTime(2024, 9, 15, 9, 25, 19, 809, DateTimeKind.Local).AddTicks(4862),
                             Description = "Описание задачи 1",
                             Title = "Задача 1"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 8, 10, 10, 28, 18, 120, DateTimeKind.Local).AddTicks(5795),
+                            CreatedDate = new DateTime(2024, 9, 15, 9, 25, 19, 809, DateTimeKind.Local).AddTicks(4874),
                             Description = "Описание задачи 2",
                             Title = "Задача 2"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 8, 10, 10, 28, 18, 120, DateTimeKind.Local).AddTicks(5796),
+                            CreatedDate = new DateTime(2024, 9, 15, 9, 25, 19, 809, DateTimeKind.Local).AddTicks(4876),
                             Description = "Описание задачи 3",
                             Title = "Задача 3"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 8, 10, 10, 28, 18, 120, DateTimeKind.Local).AddTicks(5797),
+                            CreatedDate = new DateTime(2024, 9, 15, 9, 25, 19, 809, DateTimeKind.Local).AddTicks(4876),
                             Description = "Описание задачи 4",
                             Title = "Задача 4"
                         });
